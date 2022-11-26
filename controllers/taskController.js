@@ -33,7 +33,6 @@ exports.getTask = asyncWrapper(async (req, res, next) => {
 });
 
 exports.updateTask = asyncWrapper(async (req, res, next) => {
-  //const task = await Task.findById(req.params.id);
   const { id: taskId } = req.params;
   const task = await Task.findByIdAndUpdate({ _id: taskId }, req.body, {
     new: true,
